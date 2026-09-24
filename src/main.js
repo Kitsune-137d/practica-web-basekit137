@@ -82,3 +82,26 @@ btnVaciar.addEventListener('click', () => {
 // ------------------------------------------------------------
 
 // Escribe aquí tu código del Ejercicio 4
+
+const contenedorFiltros = document.getElementById('filtros');
+
+contenedorFiltros.addEventListener('click', (evento) => {
+  const boton = evento.target.closest('button');
+  if (!boton) return;
+
+  const categoria = boton.dataset.categoria;
+
+if (categoria === 'todos') {
+    mostrarProductos(productos);
+  } else {
+    const productosFiltrados = productos.filter(p => p.categoria === categoria);
+    mostrarProductos(productosFiltrados);
+  }
+
+  const todosLosBotones = contenedorFiltros.querySelectorAll('button');
+  todosLosBotones.forEach(btn => {
+    btn.className = "btn-filtro bg-white text-gray-700 px-4 py-2 rounded font-medium hover:bg-gray-200";
+  });
+
+  boton.className = "btn-filtro bg-blue-500 text-white px-4 py-2 rounded font-medium";
+});
