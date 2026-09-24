@@ -4,21 +4,23 @@ import { productos } from './datos.js'
 // Elemento donde se dibujan las tarjetas (lo creas en el Ejercicio 1)
 const catalogo = document.getElementById('catalogo')
 
-// ------------------------------------------------------------
-// EJERCICIO 2 — mostrarProductos(lista)
-// Convierte una lista de productos en tarjetas HTML y las pone en la página.
-// Forma general:
-//   catalogo.innerHTML = lista.map(p => `
-//     <article class="...las mismas clases de tu Ejercicio 1...">
-//       <h3>${p.nombre}</h3>
-//       ...
-//       <button data-id="${p.id}">Agregar</button>
-//     </article>
-//   `).join('')
-// ------------------------------------------------------------
+
 function mostrarProductos(lista) {
-  // Escribe aquí tu código
+
+
+  catalogo.innerHTML = lista.map(p => `
+    <article class="bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold text-lg">${p.nombre}</h3>
+      <p class="text-gray-600">$${p.precio}</p>
+      <button data-id="${p.id}" class="mt-2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Agregar</button>
+    </article>
+  `).join('')
 }
+
+
+
+
+
 
 mostrarProductos(productos)
 
