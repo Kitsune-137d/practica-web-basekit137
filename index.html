@@ -7,43 +7,33 @@
   </head>
   <body class="bg-gray-100 text-gray-800">
 
-    <!-- PARTE A: comprobación de Tailwind.
-         Si esta barra se ve azul con texto blanco, Tailwind está funcionando.
-         Bórrala cuando termines la Parte A. -->
     <div class="bg-blue-600 text-white text-center p-4 font-semibold">
       ✅ Si ves esta barra azul, Tailwind está funcionando
     </div>
 
+    <header>
+      <h1>Joyería posa</h1>
+      <h4>Pagina de la joyería posa</h4>
+    </header>
 
-<header>
-<h1>Joyería posa</h1>
-<h4>Pagina de la joyería posa</h4>
-  </header>
+    <main class="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-6">
+      <div id="catalogo" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 flex-1">
+      </div>
 
-  <main>
-       <div id="catalogo" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <aside class="bg-white p-4 rounded-lg shadow w-full md:w-80 h-fit">
+        <h2 class="text-xl font-bold mb-4">Mi pedido</h2>
 
-</div>
+        <ul id="lista-pedido" class="divide-y divide-gray-200 mb-4"></ul>
+        <p id="total" class="font-bold text-lg mb-4">Total: $0</p>
+        <button id="btn-vaciar" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+          Vaciar pedido
+        </button>
+      </aside>
     </main>
 
-
-
-
-
-
-
     <footer>
-        <p>Equipo chispitas</p>
+      <p>Equipo chispitas</p>
     </footer>
-
-</body>
-</html>
-
-
-
-
-
-    
 
     <script type="module" src="/src/main.js"></script>
   </body>
