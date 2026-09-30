@@ -7,15 +7,85 @@
   </head>
   <body class="bg-gray-100 text-gray-800">
 
-    <!-- PARTE A: comprobación de Tailwind.
-         Si esta barra se ve azul con texto blanco, Tailwind está funcionando.
-         Bórrala cuando termines la Parte A. -->
     <div class="bg-blue-600 text-white text-center p-4 font-semibold">
       ✅ Si ves esta barra azul, Tailwind está funcionando
     </div>
 
-    <!-- EJERCICIO 1: construye aquí tu página (header, main con #catalogo, footer).
-         Las instrucciones están en el README. -->
+    <header class="text-center my-6">
+      <h1 class="text-3xl font-bold">Joyería posa</h1>
+      <h4 class="text-gray-600">Página de la joyería posa</h4>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 flex flex-col md:flex-row items-start gap-6">
+
+      <div id="filtros" class="flex flex-col gap-2">
+        <button data-categoria="todos" class="btn-filtro bg-blue-500 text-white px-4 py-2 rounded font-medium">Todos</button>
+        <button data-categoria="Oro" class="btn-filtro bg-white text-gray-700 px-4 py-2 rounded font-medium hover:bg-gray-200">Oro</button>
+        <button data-categoria="Plata" class="btn-filtro bg-white text-gray-700 px-4 py-2 rounded font-medium hover:bg-gray-200">Plata</button>
+      </div>
+
+      <div id="catalogo" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 flex-1">
+      </div>
+
+      <aside class="bg-white p-4 rounded-lg shadow w-full md:w-80 h-fit">
+        <h2 class="text-xl font-bold mb-4">Mi pedido</h2>
+
+        <ul id="lista-pedido" class="divide-y divide-gray-200 mb-4"></ul>
+        <p id="total" class="font-bold text-lg mb-4">Total: $0</p>
+
+        <form id="form-cliente" class="mt-4 flex flex-col gap-3">
+          <div>
+            <label for="nombre" class="block text-sm font-medium">Nombre:</label>
+            <input type="text" id="nombre" class="w-full border p-2 rounded mt-1" />
+            <p id="error-nombre" class="text-sm text-red-600 hidden">Ingresa un nombre válido.</p>
+          </div>
+
+          <div>
+            <label for="telefono" class="block text-sm font-medium">Teléfono:</label>
+            <input type="text" id="telefono" class="w-full border p-2 rounded mt-1" />
+            <p id="error-telefono" class="text-sm text-red-600 hidden">El teléfono debe tener 10 dígitos.</p>
+          </div>
+
+          <div>
+            <label for="correo" class="block text-sm font-medium">Correo electrónico:</label>
+            <input type="email" id="correo" class="w-full border p-2 rounded mt-1" />
+            <p id="error-correo" class="text-sm text-red-600 hidden">Ingresa un correo válido.</p>
+          </div>
+
+          <p id="error-pedido" class="text-sm text-red-600 hidden">El pedido no puede estar vacío.</p>
+
+          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">
+            Confirmar pedido
+          </button>
+        </form>
+
+        <button id="btn-vaciar" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mt-2">
+          Vaciar pedido
+        </button>
+      </aside>
+    </main>
+
+    <section class="max-w-6xl mx-auto p-4 mt-6">
+      <h2 class="text-2xl font-bold mb-4">Pedidos registrados</h2>
+      
+      <div class="mb-4 bg-white p-4 rounded-lg shadow">
+        <label for="buscar-cliente" class="block text-sm font-semibold text-gray-700 mb-2">
+        </label>
+        <input 
+          type="text" 
+          id="buscar-cliente" 
+          placeholder="Escribe el nombre del cliente..." 
+          class="w-full md:w-1/2 border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div id="pedidos-registrados" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      </div>
+    </section>
+
+    <footer class="text-center p-4 mt-8 bg-gray-200">
+      <p>Equipo chispitas</p>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>
